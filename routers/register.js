@@ -8,7 +8,7 @@ const CriptoJS = require("crypto-js");
 router.post("/",async (req, res)=>{
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
-    const email = req.body.email;
+    const email = req.body.email.toLowerCase();
     const password = req.body.password;
     if(!firstname || !lastname || !email || !password)
     return res.status(400).json({message: "All fileds must be filled out !"})
